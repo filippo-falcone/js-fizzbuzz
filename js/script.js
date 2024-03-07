@@ -21,11 +21,23 @@ for (let i = 1; i <= 100; i++) {
     number.classList.add('mx-2');
     number.classList.add('my-2');
     number.classList.add('rounded');
-    number.classList.add('bg-light');
     number.classList.add('text-center');
     number.classList.add('d-flex');
     number.classList.add('align-items-center');
     number.classList.add('justify-content-center');
+    if (i % 3 === 0 && i % 5 === 0) {
+        number.classList.add('bg-success');
+        number.classList.add('text-warning');
+    } else if (i % 3 === 0) {
+        number.classList.add('bg-danger');
+        number.classList.add('text-light');
+    } else if (i % 5 === 0) {
+        number.classList.add('bg-warning');
+        number.classList.add('text-danger');
+    } else {
+        number.classList.add('bg-light');
+    }
+
     // - Appendo l'elemento al container
     numberContainer.append(number);
 }
