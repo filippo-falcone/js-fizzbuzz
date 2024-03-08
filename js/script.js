@@ -10,7 +10,7 @@ fizzButton.addEventListener('click', function () {
         // Creo un elemento da inserire nell'html
         const number = document.createElement('div');
         // Assegno ai numeri una stringa quando è multiplo di 3, di 5 o di entrambi
-        let fizzOrAndBuzz;
+        let fizzOrAndBuzz = i;
         if (i % 3 === 0 && i % 5 === 0) {
             fizzOrAndBuzz = 'FizzBuzz';
             number.classList.add('bg-success');
@@ -24,7 +24,6 @@ fizzButton.addEventListener('click', function () {
             number.classList.add('bg-warning');
             number.classList.add('text-danger');
         } else {
-            fizzOrAndBuzz = i;
             number.classList.add('bg-light');
         }
         // Stampo i numeri all'utente
