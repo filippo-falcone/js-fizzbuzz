@@ -7,18 +7,27 @@ fizzButton.addEventListener('click', function () {
     fizzButton.classList.add('d-none');
     // Creo un ciclo che va da 1 a 100
     for (let i = 1; i <= 100; i++) {
+        // Creo un elemento da inserire nell'html
+        const number = document.createElement('div');
         // Assegno ai numeri una stringa quando è multiplo di 3, di 5 o di entrambi
-        let fizzOrAndBuzz = i;
+        let fizzOrAndBuzz;
         if (i % 3 === 0 && i % 5 === 0) {
             fizzOrAndBuzz = 'FizzBuzz';
+            number.classList.add('bg-success');
+            number.classList.add('text-warning');
         } else if (i % 3 === 0) {
             fizzOrAndBuzz = 'Fizz';
+            number.classList.add('bg-danger');
+            number.classList.add('text-light');
         } else if (i % 5 === 0) {
             fizzOrAndBuzz = 'Buzz';
+            number.classList.add('bg-warning');
+            number.classList.add('text-danger');
+        } else {
+            fizzOrAndBuzz = i;
+            number.classList.add('bg-light');
         }
         // Stampo i numeri all'utente
-        // - Per ogni numero creo un elemento da inserire nell'html
-        const number = document.createElement('div');
         // - Inserisco il contenuto da stampare
         number.innerHTML = fizzOrAndBuzz;
         // - Inserisco le classi
@@ -30,19 +39,6 @@ fizzButton.addEventListener('click', function () {
         number.classList.add('d-flex');
         number.classList.add('align-items-center');
         number.classList.add('justify-content-center');
-        if (i % 3 === 0 && i % 5 === 0) {
-            number.classList.add('bg-success');
-            number.classList.add('text-warning');
-        } else if (i % 3 === 0) {
-            number.classList.add('bg-danger');
-            number.classList.add('text-light');
-        } else if (i % 5 === 0) {
-            number.classList.add('bg-warning');
-            number.classList.add('text-danger');
-        } else {
-            number.classList.add('bg-light');
-        }
-
         // - Appendo l'elemento al container
         numberContainer.append(number);
     }
